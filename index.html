@@ -3,193 +3,265 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Polsek Seunagan - Sigap & Melayani</title>
+    <title>Polsek Seunagan - Profesional & Modern</title>
     
-    <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <!-- Font Awesome (Icons) -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Plus+Jakarta+Sans:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- AOS Animation -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <style>
         :root {
-            --primary-dark: #1a1a1a;
-            --accent-gold: #f1c40f;
-            --text-light: #f8f9fa;
+            --primary-navy: #0a192f;
+            --secondary-navy: #112240;
+            --accent-gold: #c5a059; /* Gold yang lebih elegan, bukan kuning terang */
+            --soft-gold: #e3c08d;
+            --text-light: #e6f1ff;
+            --text-gray: #8892b0;
+            --glass-bg: rgba(255, 255, 255, 0.05);
         }
 
         body { 
-            font-family: 'Poppins', sans-serif; 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            background-color: #fcfcfc;
+            color: var(--primary-navy);
             overflow-x: hidden;
-            scroll-behavior: smooth;
         }
 
-        h1, h2, h3, .navbar-brand { font-family: 'Montserrat', sans-serif; }
+        h1, h2, h3, .navbar-brand { font-family: 'Outfit', sans-serif; letter-spacing: -0.5px; }
 
-        /* Navbar Enhancement */
+        /* Smooth Navbar */
         .navbar { 
-            background-color: rgba(26, 26, 26, 0.95); 
-            backdrop-filter: blur(10px);
-            border-bottom: 3px solid var(--accent-gold); 
-            padding: 15px 0;
-        }
-
-        /* Hero Section with Parallax Effect */
-        .hero-section {
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), 
-                        url('https://images.unsplash.com/photo-1593115057322-e94b77572f20?auto=format&fit=crop&q=80&w=1500'); 
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            color: white;
-        }
-
-        .btn-polri { 
-            background-color: var(--accent-gold); 
-            color: #1a1a1a; 
-            font-weight: 700; 
-            border: none; 
-            padding: 12px 30px;
+            background-color: rgba(10, 25, 47, 0.9); 
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(197, 160, 89, 0.3); 
             transition: all 0.3s ease;
         }
 
-        .btn-polri:hover { 
-            background-color: #fff; 
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(241, 196, 15, 0.3);
+        .nav-link {
+            color: var(--text-light) !important;
+            font-weight: 500;
+            margin: 0 10px;
+            transition: color 0.3s;
         }
 
-        .section-title { 
-            position: relative;
-            padding-bottom: 15px;
-            margin-bottom: 40px;
+        .nav-link:hover { color: var(--accent-gold) !important; }
+
+        /* Hero Section Premium */
+        .hero-section {
+            background: linear-gradient(135deg, rgba(10, 25, 47, 0.9), rgba(10, 25, 47, 0.7)), 
+                        url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=1500'); 
+            background-size: cover;
+            background-position: center;
+            height: 90vh;
+            display: flex;
+            align-items: center;
+            color: white;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
+        }
+
+        .hero-badge {
+            background: rgba(197, 160, 89, 0.2);
+            color: var(--soft-gold);
+            padding: 8px 16px;
+            border-radius: 50px;
+            border: 1px solid var(--accent-gold);
+            display: inline-block;
+            margin-bottom: 20px;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+        }
+
+        /* Buttons Custom */
+        .btn-premium { 
+            background: linear-gradient(45deg, var(--accent-gold), var(--soft-gold));
+            color: var(--primary-navy) !important; 
             font-weight: 700; 
+            border: none; 
+            border-radius: 8px;
+            padding: 14px 32px;
+            box-shadow: 0 4px 15px rgba(197, 160, 89, 0.3);
         }
 
-        .section-title::after {
+        /* Profile Card Improvement */
+        .kapolsek-card {
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border: 1px solid #eee;
+        }
+
+        .kapolsek-info {
+            background: var(--primary-navy);
+            color: white;
+            padding: 25px;
+            margin-top: -40px;
+            position: relative;
+            z-index: 2;
+            border-radius: 15px;
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Service Cards - Modern Glass */
+        .card-service {
+            border: 1px solid #f0f0f0;
+            border-radius: 20px;
+            background: #fff;
+            padding: 40px 30px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .card-service:hover {
+            transform: translateY(-12px);
+            border-color: var(--accent-gold);
+            box-shadow: 0 15px 45px rgba(10, 25, 47, 0.1);
+        }
+
+        .icon-circle {
+            width: 80px;
+            height: 80px;
+            background: #f8f9fa;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+            color: var(--accent-gold);
+            font-size: 32px;
+            transition: 0.3s;
+        }
+
+        .card-service:hover .icon-circle {
+            background: var(--primary-navy);
+            color: var(--accent-gold);
+        }
+
+        /* Emergency Section */
+        .emergency-bar {
+            background: var(--primary-navy);
+            border-radius: 30px;
+            padding: 60px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .emergency-bar::before {
             content: '';
             position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 60px;
-            height: 4px;
+            top: -50%;
+            right: -10%;
+            width: 400px;
+            height: 400px;
             background: var(--accent-gold);
+            opacity: 0.05;
+            border-radius: 50%;
         }
 
-        .text-center .section-title::after { left: 50%; transform: translateX(-50%); }
-
-        /* Card Hover Effects */
-        .card-layanan {
-            border: none;
-            border-radius: 15px;
-            transition: all 0.4s ease;
-            background: #ffffff;
-        }
-
-        .card-layanan:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1) !important;
-        }
-
-        .icon-box {
-            width: 70px;
-            height: 70px;
-            background: rgba(241, 196, 15, 0.1);
+        /* Floating WhatsApp Improved */
+        .wa-float {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            background: #25d366;
+            width: 65px;
+            height: 65px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 20px;
-            color: var(--accent-gold);
-            font-size: 28px;
-        }
-
-        /* Floating WhatsApp */
-        .fab-wa {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background-color: #25d366;
             color: white;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            text-align: center;
-            line-height: 60px;
-            font-size: 30px;
-            z-index: 1000;
-            box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+            font-size: 35px;
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+            z-index: 9999;
+            transition: 0.3s;
+        }
+        
+        .wa-float:hover { transform: scale(1.1) rotate(10deg); color: white; }
+
+        .section-tag {
+            color: var(--accent-gold);
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+            display: block;
+            margin-bottom: 10px;
         }
 
-        footer { background: #111; color: #888; padding: 50px 0 20px; }
+        footer { background: #050c16; color: #a8b2d1; padding: 80px 0 30px; }
     </style>
 </head>
 <body>
 
-    <!-- Floating WA -->
-    <a href="https://wa.me/628123456789" class="fab-wa" target="_blank">
+    <a href="https://wa.me/628123456789" class="wa-float" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="#">
-                <i class="fas fa-shield-halved text-warning me-2"></i>POLSEK SEUNAGAN
+            <a class="navbar-brand fw-bold d-flex align-items-center" href="#">
+                <div class="bg-warning rounded-circle me-2 d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                    <i class="fas fa-shield-halved text-dark"></i>
+                </div>
+                <span>POLSEK SEUNAGAN</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link px-3" href="#beranda">Beranda</a></li>
-                    <li class="nav-item"><a class="nav-link px-3" href="#profil">Profil</a></li>
-                    <li class="nav-item"><a class="nav-link px-3" href="#layanan">Layanan</a></li>
-                    <li class="nav-item"><a class="nav-link px-3" href="#kontak">Kontak</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#beranda">Beranda</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#profil">Profil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#layanan">Layanan</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#kontak">Hubungi Kami</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section id="beranda" class="hero-section">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-8 text-start" data-aos="fade-right">
-                    <h5 class="text-warning fw-bold mb-3">POLRES NAGAN RAYA</h5>
-                    <h1 class="display-2 fw-bold mb-4">Rastra Sewakottama</h1>
-                    <p class="lead mb-5 fs-4">Berbakti untuk Negeri, Melayani dengan Hati. Menjaga Keamanan dan Ketertiban di Wilayah Seunagan.</p>
-                    <div class="d-flex gap-3">
-                        <a href="#layanan" class="btn btn-polri btn-lg shadow">Layanan Publik</a>
-                        <a href="#kontak" class="btn btn-outline-light btn-lg">Hubungi Kami</a>
+            <div class="row align-items-center">
+                <div class="col-lg-7" data-aos="fade-right">
+                    <span class="hero-badge">Polres Nagan Raya • Polda Aceh</span>
+                    <h1 class="display-3 fw-bold mb-4">Melayani Dengan <span style="color: var(--accent-gold)">Integritas</span> & Sepenuh Hati</h1>
+                    <p class="lead mb-5 text-light-50 opacity-75">Kami hadir untuk memastikan keamanan, ketertiban, dan kenyamanan seluruh masyarakat di wilayah hukum Seunagan melalui pelayanan publik yang modern.</p>
+                    <div class="d-flex flex-wrap gap-3">
+                        <a href="#layanan" class="btn btn-premium px-5 py-3">E-Layanan Publik</a>
+                        <a href="#profil" class="btn btn-outline-light px-5 py-3" style="border-radius: 8px;">Tentang Kami</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Profil Section -->
-    <section id="profil" class="py-5 mt-5">
+    <section id="profil" class="py-5 my-lg-5">
         <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-6 mb-4" data-aos="fade-up">
-                    <h2 class="section-title">Pesan Kapolsek</h2>
-                    <p class="lead fw-600 color-primary">"Kamtibmas adalah Prioritas Utama Kami"</p>
-                    <p class="text-secondary">Polsek Seunagan berkomitmen penuh dalam menjaga keamanan dan ketertiban masyarakat di wilayah hukum Seunagan. Kami terus berupaya memberikan pelayanan yang transparan, cepat, dan humanis kepada seluruh lapisan masyarakat.</p>
-                    <p class="text-secondary">Kehadiran portal digital ini merupakan langkah transformasi menuju Polri yang <strong>Presisi</strong> (Prediktif, Responsibilitas, dan Transparansi Berkeadilan).</p>
+            <div class="row align-items-center g-5">
+                <div class="col-md-6 order-2 order-md-1" data-aos="fade-up">
+                    <span class="section-tag">Sambutan</span>
+                    <h2 class="fw-bold mb-4 display-6">Pesan Kapolsek Seunagan</h2>
+                    <p class="text-secondary mb-4" style="line-height: 1.8;">"Keamanan bukan hanya tanggung jawab kepolisian, melainkan hasil sinergi yang kuat antara aparat dan masyarakat. Polsek Seunagan berkomitmen untuk terus bertransformasi menuju Polri yang <strong>Presisi</strong>, memberikan pelayanan yang cepat, transparan, dan berkeadilan."</p>
+                    
+                    <div class="d-flex align-items-center mt-4 border-start border-4 border-warning ps-4">
+                        <div>
+                            <h4 class="mb-0 fw-bold">IPTU Muhammad 
+                                
+                            </h4>
+                            <p class="text-muted mb-0">Kepala Kepolisian Sektor Seunagan</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-6 text-center" data-aos="zoom-in">
-                    <div class="position-relative d-inline-block">
-                        <img src="profil_kapolsek.jpg" alt="Kapolsek Seunagan" class="img-fluid rounded shadow-lg" style="max-width: 380px; border-bottom: 8px solid var(--accent-gold);">
-                        <div class="bg-dark text-white p-3 mt-n4 position-relative mx-auto shadow" style="width: 80%; border-radius: 10px;">
-                            <h5 class="fw-bold mb-0">IPTU muhammad yacob</h5>
-                            <small class="text-warning">Kapolsek Seunagan</small>
+                <div class="col-md-6 order-1 order-md-2 text-center" data-aos="zoom-in">
+                    <div class="kapolsek-card d-inline-block">
+                        <img src="profil_kapolsek.jpg" alt="Kapolsek" class="img-fluid" style="width: 400px; height: 500px; object-fit: cover; background: #ddd;">
+                        <div class="kapolsek-info shadow">
+                            <h5 class="mb-1 fw-bold text-warning">PRESISI</h5>
+                            <small class="opacity-75">Prediktif - Responsibilitas - Transparansi Berkeadilan</small>
                         </div>
                     </div>
                 </div>
@@ -197,66 +269,61 @@
         </div>
     </section>
 
-    <!-- Layanan Section -->
-    <section id="layanan" class="py-5 bg-light">
-        <div class="container">
+    <section id="layanan" class="py-5" style="background-color: #f8faff;">
+        <div class="container py-lg-5">
             <div class="text-center mb-5" data-aos="fade-up">
-                <h2 class="section-title">Layanan Publik</h2>
-                <p class="text-muted">Akses layanan kepolisian kini lebih mudah dan transparan</p>
+                <span class="section-tag mx-auto">Pelayanan</span>
+                <h2 class="fw-bold display-6">Layanan Digital & Administrasi</h2>
+                <div class="bg-warning mx-auto mt-3" style="width: 60px; height: 4px; border-radius: 2px;"></div>
             </div>
+            
             <div class="row g-4">
                 <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="card card-layanan h-100 shadow-sm p-4 text-center">
-                        <div class="icon-box mx-auto">
-                            <i class="fas fa-file-signature"></i>
+                    <div class="card-service text-center h-100">
+                        <div class="icon-circle mx-auto">
+                            <i class="fas fa-id-card"></i>
                         </div>
-                        <h5 class="fw-bold">SKCK Online</h5>
-                        <p class="small text-muted">Pembuatan Surat Keterangan Catatan Kepolisian dengan syarat yang mudah dan proses cepat.</p>
+                        <h4 class="fw-bold mb-3">SKCK Online</h4>
+                        <p class="text-muted">Proses pendaftaran Surat Keterangan Catatan Kepolisian kini dapat diawali secara daring untuk efisiensi waktu Anda.</p>
                     </div>
                 </div>
                 <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="card card-layanan h-100 shadow-sm p-4 text-center">
-                        <div class="icon-box mx-auto">
-                            <i class="fas fa-bullhorn"></i>
+                    <div class="card-service text-center h-100">
+                        <div class="icon-circle mx-auto">
+                            <i class="fas fa-file-invoice"></i>
                         </div>
-                        <h5 class="fw-bold">Laporan Kehilangan</h5>
-                        <p class="small text-muted">Pelayanan administrasi untuk surat keterangan tanda lapor kehilangan (SKTLK) dokumen penting.</p>
+                        <h4 class="fw-bold mb-3">Surat Kehilangan</h4>
+                        <p class="text-muted">Layanan cepat penerbitan Surat Keterangan Tanda Lapor Kehilangan (SKTLK) untuk dokumen penting dan barang berharga.</p>
                     </div>
                 </div>
                 <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
-                    <div class="card card-layanan h-100 shadow-sm p-4 text-center">
-                        <div class="icon-box mx-auto">
-                            <i class="fas fa-headset"></i>
+                    <div class="card-service text-center h-100">
+                        <div class="icon-circle mx-auto">
+                            <i class="fas fa-user-shield"></i>
                         </div>
-                        <h5 class="fw-bold">Pengaduan Masyarakat</h5>
-                        <p class="small text-muted">Layanan aduan gangguan kamtibmas, narkoba, dan kriminalitas 24 jam non-stop.</p>
+                        <h4 class="fw-bold mb-3">Aduan Warga</h4>
+                        <p class="text-muted">Hubungi tim operasional kami langsung melalui WhatsApp untuk laporan gangguan Kamtibmas di lingkungan Anda.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Kontak Section -->
-    <section id="kontak" class="py-5">
+    <section id="kontak" class="py-5 mb-5">
         <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-10" data-aos="flip-up">
-                    <div class="p-5 rounded-4 bg-dark text-white shadow-lg overflow-hidden position-relative">
-                        <div style="position:absolute; right:-50px; top:-50px; opacity:0.1; font-size: 200px;">
-                            <i class="fas fa-phone-volume"></i>
-                        </div>
-                        <div class="row align-items-center position-relative">
-                            <div class="col-md-6 text-center text-md-start">
-                                <h2 class="text-warning fw-bold mb-3">DARURAT?</h2>
-                                <p class="mb-4">Segera hubungi Call Center Polri jika Anda melihat atau mengalami tindak kriminal.</p>
-                                <h1 class="display-1 fw-bold text-white mb-0">110</h1>
-                            </div>
-                            <div class="col-md-6 mt-4 mt-md-0 border-start border-secondary ps-md-5">
-                                <h5 class="fw-bold"><i class="fas fa-map-marker-alt text-warning me-2"></i> Alamat Kantor</h5>
-                                <p class="small text-secondary">Jl. Sultan Iskandar Muda, Kompleks Perkantoran Suka Makmue, No. 1, Kab. Nagan Raya, 23674</p>
-                                <h5 class="fw-bold mt-4"><i class="fas fa-clock text-warning me-2"></i> Jam Operasional</h5>
-                                <p class="small text-secondary">Setiap Hari: 24 Jam Melayani</p>
-                            </div>
+            <div class="emergency-bar" data-aos="zoom-out">
+                <div class="row align-items-center">
+                    <div class="col-lg-7 text-center text-lg-start">
+                        <h2 class="display-5 fw-bold text-warning mb-3">Layanan Darurat 110</h2>
+                        <p class="fs-5 opacity-75">Butuh bantuan segera? Jangan ragu untuk menghubungi Call Center Polri. Kami siaga 24 jam untuk keselamatan Anda.</p>
+                    </div>
+                    <div class="col-lg-5 text-center mt-4 mt-lg-0">
+                        <div class="d-inline-block p-4 rounded-4" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);">
+                            <p class="mb-0 text-uppercase small tracking-wider">Lokasi Kantor</p>
+                            <p class="fw-bold mb-0">Jl. Sultan Iskandar Muda, Suka Makmue</p>
+                            <hr class="my-3 opacity-25">
+                            <p class="mb-0 text-uppercase small">Respon Cepat</p>
+                            <p class="fw-bold mb-0">Senin - Minggu: 24 Jam</p>
                         </div>
                     </div>
                 </div>
@@ -264,26 +331,48 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
-        <div class="container text-center">
-            <div class="mb-4">
-                <a href="#" class="text-white me-3 fs-4"><i class="fab fa-instagram"></i></a>
-                <a href="#" class="text-white me-3 fs-4"><i class="fab fa-facebook"></i></a>
-                <a href="#" class="text-white fs-4"><i class="fab fa-youtube"></i></a>
+        <div class="container">
+            <div class="row g-4 mb-5">
+                <div class="col-lg-4">
+                    <h5 class="text-white fw-bold mb-4">Polsek Seunagan</h5>
+                    <p>Mewujudkan wilayah Seunagan yang aman, kondusif, dan harmonis melalui pelayanan kepolisian yang profesional.</p>
+                </div>
+                <div class="col-lg-4 text-center">
+                    <h5 class="text-white fw-bold mb-4">Ikuti Kami</h5>
+                    <div class="d-flex justify-content-center gap-3">
+                        <a href="#" class="btn btn-outline-light rounded-circle" style="width: 45px; height: 45px;"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="btn btn-outline-light rounded-circle" style="width: 45px; height: 45px;"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="btn btn-outline-light rounded-circle" style="width: 45px; height: 45px;"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 text-lg-end">
+                    <h5 class="text-white fw-bold mb-4">Hubungi Kami</h5>
+                    <p class="mb-1">Email: info@polsekseunagan.go.id</p>
+                    <p>Telp: (0655) 123456</p>
+                </div>
             </div>
-            <p class="mb-0">© 2026 <strong>Polsek Seunagan</strong> - Polres Nagan Raya</p>
-            <small class="text-muted">Sigap, Profesional, dan Modern</small>
+            <hr class="opacity-10">
+            <div class="text-center pt-3">
+                <p class="small mb-0">© 2026 Kepolisian Sektor Seunagan. Seluruh Hak Cipta Dilindungi.</p>
+            </div>
         </div>
     </footer>
 
-    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init({
-            duration: 1000,
-            once: true
+        AOS.init({ duration: 1000, once: true, offset: 100 });
+        
+        // Change Navbar on Scroll
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 50) {
+                document.querySelector('.navbar').style.padding = '10px 0';
+                document.querySelector('.navbar').style.background = 'rgba(10, 25, 47, 0.98)';
+            } else {
+                document.querySelector('.navbar').style.padding = '15px 0';
+                document.querySelector('.navbar').style.background = 'rgba(10, 25, 47, 0.9)';
+            }
         });
     </script>
 </body>
